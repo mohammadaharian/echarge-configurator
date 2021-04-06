@@ -1,0 +1,768 @@
+:root {
+    --color-accent: #128C15;
+    --color-accent-hover: #C5DEC5;
+    --color-secondary: #2A5DA3;
+
+    --border-radius: 12px;
+    --box-shadow: 0 6px 10px -3px rgba(0,0,0,.27);
+}
+
+body,
+* {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    pointer-events: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    pointer-events: initial;
+}
+
+/* - Components - */
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flex.alignCenter > * {
+    margin: auto;
+}
+
+.flex.alignLeft > * {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.interact,
+.interact * {
+    pointer-events: initial;
+}
+
+#echarge {
+    height: 100%;
+}
+
+/* - Header - */
+
+#echargeHeader {
+    width: 100%;
+    height: 60px;
+    background: white;
+}
+
+#echargeHeader div {
+    width: 100%;
+    height: 100%;
+    background: var(--color-accent);
+    box-sizing: border-box;
+    padding-left: 30px;
+    display: flex;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+#echargeHeader div p {
+    margin-top: auto;
+    margin-bottom: auto;
+    color: white;
+    font-size: 20px;
+}
+
+#echargeHeader #echargeLogo {
+    height: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* - Main - */
+
+#echargeMain {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 60px - 40px);
+    background-color: white;
+    background-image: url("../img/background.jpg");
+    background-size: cover;
+    display: flex;
+    z-index: -2;
+}
+
+#echargeMain #configurator {
+    margin: auto;
+    width: calc(100% - 50px);
+    max-width: 1500px;
+    height: 85px;
+    pointer-events: initial;
+    background-color: #D9D9D9;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: 300ms background-color;
+}
+
+#echargeMain #configurator #select {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+}
+
+/* Select cursor */
+#echargeMain #configurator #cursor {
+    position: absolute;
+    margin: 10px;
+    width: 200px;
+    height: 65px;
+    background: white;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    display: flex;
+    fill: var(--color-accent);
+    transition: 300ms transform;
+    transform: translate(0);
+}
+
+#echargeMain #configurator #cursor .expand {
+    position: relative;
+    margin: auto;
+    min-width: 10px;
+    height: 30px;
+    border-bottom: solid 2px var(--color-accent);
+}
+
+#echargeMain #configurator #cursor .expand p {
+    margin: 0;
+    font-size: 20px;
+    padding-right: 30px;
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+}
+
+#echargeMain #configurator #cursor .expand .chevron {
+    position: absolute;
+    right: 0;
+    bottom: 7px;
+    height: 10px;
+    transition: 300ms transform;
+}
+
+/* Select options */
+#echargeMain #configurator #select .option {
+    width: 210px;
+    font-size: 20px;
+    border-left: solid 1px #C7C7C7;
+    cursor: pointer;
+    fill: rgba(0,0,0,.3);
+}
+
+#echargeMain #configurator #select .option svg {
+    height: 15px;
+    right: 50px;
+    position: absolute;
+    display: none;
+    fill: inherit;
+    pointer-events: none;
+    transition: 300ms transform;
+}
+
+#echargeMain #configurator #select .option p {
+    margin: auto;
+    padding-right: 30px;
+    pointer-events: none;
+    text-align: right;
+}
+
+#echargeMain #configurator #select #echargeSearch.option p {
+    padding-right: 0;
+}
+
+#echargeMain #configurator #select .option:first-child {
+    border-left: none;
+}
+
+/* Select options -> Search button */
+#echargeMain #configurator #select #echargeSearch.option {
+    width: 130px;
+    margin-left: auto;
+    padding-right: 0;
+    background-color: #C7C7C7;
+    border-radius: var(--border-radius);
+    transition: 300ms background-color;
+}
+
+/* Dropdown */
+#echargeMain #dropdown {
+    position: absolute;
+    width: 210px;
+    height: 300px;
+    box-sizing: border-box;
+    padding: 25px;
+    padding-right: 10px;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    z-index: -1;
+    transform: translate(5px);
+    opacity: 0;
+    display: none;
+}
+
+#echargeMain #dropdown .content {
+    height: calc(100% + 20px);
+    overflow-y: scroll;
+}
+
+#echargeMain #dropdown .vignette {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: none;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 5%, rgba(255,255,255,0) 13%, rgba(255,255,255,0) 85%, rgba(255,255,255,0.8799894957983193) 92%, rgba(255,255,255,1) 100%);
+}
+
+#echargeMain #dropdown p {
+    width: 90%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 12px;
+    font-size: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#echargeMain #dropdown p:first-child {
+    margin-top: 5px;
+}
+
+#echargeMain #dropdown p:last-child {
+    margin-bottom: 40px;
+}
+
+#echargeMain #dropdown p:hover {
+    background: var(--color-accent-hover);
+}
+
+/* Summary */
+#echargeMain #summary {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#echargeMain #summary .inner {
+    position: relative;
+    margin: auto;
+    width: calc(100% - 50px);
+    height: calc(100% - 50px);
+    border-radius: 40px;
+    box-sizing: border-box;
+    padding: 30px;
+    background: #E6E6E6;
+}
+
+#echargeMain #summary #banner {
+    text-align: center;
+    background: white;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 50px;
+}
+
+#echargeMain #summary #banner span {
+    color: var(--color-accent);
+}
+
+#echargeMain #summary #banner span:nth-of-type(2) {
+    color: inherit;
+    font-weight: bold;
+}
+
+#echargeMain #summary h2 {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 20px;
+}
+
+/* Summary -> Gallery */
+#echargeMain #summary .gallery {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#echargeMain #summary .gallery .item {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    margin: 10px;
+    background: white;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+}
+
+#echargeMain #summary .gallery .item:nth-child(n+5), 
+#echargeMain #summary .gallery .item.noLength .length {
+    display: none;
+}
+
+#echargeMain #summary .gallery .item * {
+    text-align: center;
+}
+
+#echargeMain #summary .gallery .item .length {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 16px;
+    color: white;
+    line-height: 45px;
+    background: var(--color-secondary);
+    border-radius: 100%;
+    z-index: 1;
+}
+
+#echargeMain #summary .gallery .item img {
+    height: 58%;
+    margin-left: 50%;
+    margin-bottom: 20px;
+    transform: translate(-50%);
+}
+
+#echargeMain #summary .gallery .item a {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 20px;
+    width: calc(100% - 70px);
+    padding: 15px;
+    color: white;
+    background: var(--color-accent);
+    border-radius: 50px;
+}
+
+/* Summary -> Action buttons */
+#echargeMain #summary #action {
+    position: absolute;
+    width: calc(100% - 70px);
+    bottom: 20px;
+}
+
+#echargeMain #summary #action #restart {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: white;
+    height: 20px;
+    padding: 8px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 50px;
+    font-size: 18px;
+    box-shadow: var(--box-shadow);
+    pointer-events: initial;
+    cursor: pointer;
+}
+
+/* --- */
+
+#echargeMain #summary #action #accessories {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-left: auto;
+    height: 55px;
+    width: 300px;
+    background: #7B7B7B;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: 300ms height;
+    pointer-events: initial;
+    cursor: pointer;
+    z-index: 3;
+    display: none;
+}
+
+#echargeMain #summary #action #accessories .gallery {
+    position: absolute;
+    bottom: 15px;
+    opacity: 0;
+    transition: 300ms opacity;
+}
+
+#echargeMain #summary #action #accessories .gallery a {
+    pointer-events: none;
+}
+
+#echargeMain #summary #action #accessories > p {
+    position: absolute;
+    font-size: 20px;
+    left: 15px;
+    bottom: 0;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    opacity: 1;
+    transition: 300ms opacity;
+}
+
+#echargeMain #summary #action #accessories svg {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 15px;
+    transform: rotate(-180deg);
+    transition: 300ms transform;
+}
+
+/* --- */
+#echargeMain #summary #filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 40px;
+    opacity: 0;
+    transition: 300ms opacity;
+    z-index: 2;
+}
+
+/* Select stages */
+#echargeMain #configurator.select0 #select .option:not(:first-child),
+#echargeMain #configurator.select1 #select .option:nth-child(1n+3),
+#echargeMain #configurator.select2 #select .option:nth-child(1n+4) {
+    pointer-events: none;
+    color: #888888;
+}
+
+#echargeMain #configurator.select3 {
+    background-color: white;
+}
+
+#echargeMain #configurator.select3 #select #echargeSearch.option {
+    background-color: var(--color-accent);
+    color: white;
+}
+
+/* Select stages -> Cursor */
+#echargeMain #configurator.select0 #cursor .expand p:first-child,
+#echargeMain #configurator.select1 #cursor .expand p:nth-child(2),
+#echargeMain #configurator.select2 #cursor .expand p:nth-child(3),
+#echargeMain #configurator.select3 #cursor .expand p:nth-child(3) {
+    display: initial;
+}
+
+/* --- */
+
+#echargeMain #configurator.select2.dropdownActive #cursor svg,
+#echargeMain #configurator.select1.dropdownActive #cursor svg,
+#echargeMain #configurator.select0.dropdownActive #cursor svg {
+    transform: rotate(180deg);
+}
+
+/* Select stages -> Cursor translation */
+#echargeMain #configurator.select0 #cursor {
+    transform: translate(0);
+}
+
+#echargeMain #configurator.select1 #cursor {
+    transform: translate(216px);
+}
+
+#echargeMain #configurator.select2 #cursor,
+#echargeMain #configurator.select3 #cursor {
+    transform: translate(427px);
+}
+
+/* Select stages -> Dropdown active */
+#echargeMain #configurator.dropdownActive #dropdown {
+    opacity: 1;
+    display: initial;
+}
+
+/* Select stages -> Dropdown translation */
+#echargeMain #configurator.select1 #dropdown {
+    transform: translate(220px);
+}
+
+#echargeMain #configurator.select2 #dropdown {
+    transform: translate(435px);
+}
+
+/* Select stages -> Summary */
+#echargeMain #summary.active {
+    display: flex;
+}
+
+/* Select stages -> Summary -> Accessories active */
+#echargeMain #summary #action #accessories.active {
+    display: initial;
+}
+
+#echargeMain #summary.accessoriesActive #action #accessories {
+    height: 380px;
+}
+
+#echargeMain #summary.accessoriesActive #filter,
+#echargeMain #summary.accessoriesActive #action #accessories .gallery {
+    opacity: 1;
+}
+
+#echargeMain #summary.accessoriesActive #action #accessories > p {
+    opacity: 0;
+}
+
+#echargeMain #summary.accessoriesActive #action #accessories a {
+    pointer-events: initial;
+}
+
+#echargeMain #summary.accessoriesActive #action #accessories svg {
+    transform: rotate(0deg);
+}
+
+/* - Footer - */
+
+#echargeFooter {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    background: var(--color-secondary);
+    bottom: 0;
+    color: white;
+}
+
+#echargeFooter img {
+    height: 60%;
+    height: 25px;
+}
+
+/* Media Queries */
+
+
+@media screen and (max-width: 1185px) {
+    #echargeMain #summary .gallery .item img {
+        height: 50%;
+    }
+}
+
+@media screen and (max-width: 840px) {
+
+    /* - Components - */
+    .flex {
+        flex-wrap: wrap;
+    }
+
+    .flex.alignLeft > * {
+        margin: auto;
+    }
+
+    /* Header */
+
+    #echargeHeader div {
+        border-radius: 0;
+        text-align: center;
+    }
+
+    #echargeHeader #echargeLogo {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    #echargeHeader div {
+        padding-left: 0;
+        justify-content: center;
+    }
+
+    /* Main */
+
+    #echargeMain {
+        top: 60px;
+        height: calc(100% - 120px);
+        min-height: 600px;
+    }
+
+    /* Main -> Configurator */
+
+    #echargeMain #configurator {
+        height: calc(100% - 70px);
+    }
+
+    #echargeMain #configurator #select {
+        top: 20px;
+        flex-wrap: wrap;
+        height: 500px;
+        justify-content: center;
+    }
+
+    #echargeMain #configurator #select .option {
+        width: calc(100% - 30px);
+        box-shadow: var(--box-shadow);
+        background: #E0E0E0;
+        border-radius: var(--border-radius);
+        height: 60px;
+    }
+
+    #echargeMain #configurator #select .option svg {
+        display: initial;
+    }
+
+    #echargeMain #configurator #select #echargeSearch.option {
+        margin-left: initial;
+        width: calc(100% - 30px);
+    }
+
+    /* Main -> Configurator -> Select stages */
+    #echargeMain #configurator.select3 #select .option:nth-child(-n+3),
+    #echargeMain #configurator.select2 #select .option:nth-child(-n+3),
+    #echargeMain #configurator.select1 #select .option:nth-child(-n+2),
+    #echargeMain #configurator.select0 #select .option:first-child {
+        background: white;
+        fill: var(--color-accent);
+    }
+
+    #echargeMain #configurator.select3 {
+        background-color: #D9D9D9;
+    }
+
+    /* Main -> Configurator -> Cursor */
+    #echargeMain #configurator #cursor {
+        display: none;
+    }
+
+    /* Main -> Dropdown */
+    #echargeMain #dropdown {
+        top: 0;
+        left: 50px;
+        width: calc(100% - 100px);
+        z-index: 1;
+    }
+
+    #echargeMain #dropdown p {
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 25px;
+    }
+
+    /* Main -> Dropdown -> Stages */
+    #echargeMain #configurator.select0 #dropdown {
+        transform: translateY(135px);
+        height: calc(100% - 220px);
+    }
+
+    #echargeMain #configurator.select1 #dropdown {
+        transform: translateY(255px);
+        height: calc(100% - 340px);
+    }
+
+    #echargeMain #configurator.select2 #dropdown {
+        transform: translateY(375px);
+        height: calc(100% - 470px);
+    }
+
+    /* --- */
+
+    #echargeMain #configurator.select2.dropdownActive #select .option:nth-child(3) svg,
+    #echargeMain #configurator.select1.dropdownActive #select .option:nth-child(2) svg,
+    #echargeMain #configurator.select0.dropdownActive #select .option:nth-child(1) svg {
+        transform: rotate(180deg);
+    }
+
+    /* Main -> Summary */
+    #echargeMain #summary .inner {
+        overflow-y: scroll;
+        pointer-events: initial;
+        border-radius: var(--border-radius);
+    }
+
+    #echargeMain #summary #banner {
+        box-shadow: var(--box-shadow);
+        border-radius: 20px;
+    }
+
+    #echargeMain #summary h2 {
+        text-align: center;
+    }
+
+    #echargeMain #summary .gallery {
+        flex-wrap: wrap;
+    }
+
+    #echargeMain #summary .gallery .item:nth-child(n+5) {
+        display: initial;
+    }
+
+    #echargeMain #summary .gallery .item:last-child {
+        margin-bottom: 50px;
+    }
+
+    #echargeMain #summary .gallery .item img {
+        height: 58%;
+    }
+
+    #echargeMain #summary #action,
+    #echargeMain #summary #filter {
+        display: none;
+    }
+
+    /* Footer */
+
+    #echargeFooter {
+        position: fixed;
+        width: calc(100% - 70px);
+        bottom: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        left: 35px;
+        border-radius: 100px;
+        font-size: 3vw;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    #echargeMain #summary #banner {
+        margin: 20px;
+    }
+
+    #echargeMain #summary .inner {
+        padding: 0;
+    }
+    
+    /* Footer */
+
+    #echargeFooter {
+        width: calc(100% - 50px);
+        left: 25px;
+    }
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+
+    #echargeMain #summary #filter {
+        background: rgba(0,0,0,.2);
+        border-radius: 40px;
+    }
+
+}

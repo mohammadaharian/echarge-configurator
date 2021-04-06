@@ -1,0 +1,135 @@
+{
+	"EV-5100": {
+		"argument": "noLength",
+		"length": "0",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-5100.png?width=120",
+		"text": "Förvaringsväska för kablar",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-5100"
+	},
+	"EV-1203": {
+		"length": "3m",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-1203.png?width=120",
+		"text": "Type 2 - Type 2, 16A",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-1203"
+	},
+	"EV-1213": {
+		"length": "3m",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-1213.png?width=120",
+		"text": "Type 2 - Type 2, 32A",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-1213"
+	},
+	"EV-1205": {
+		"length": "5m",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-1205.png?width=120",
+		"text": "Type 2 - Type 2, 16A",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-1205"
+	},
+	"EV-1103": {
+		"length": "3m",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-1103.png?width=120",
+		"text": "Type 2 - Type 1, 16A",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-1103"
+	},
+	"EV-1215": {
+		"length": "5m",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-1215.png?width=120",
+		"text": "Type 2 - Type 2, 32A",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-1215"
+	},
+	"EV-1105": {
+		"length": "5m",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-1105.png?width=120",
+		"text": "Type 2 - Type 1, 16A",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-1105"
+	},
+	"EV-1207": {
+		"length": "7m",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-1207.png?width=120",
+		"text": "Type 2 - Type 2, 16A",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-1207"
+	},
+	"EV-3203": {
+		"length": "3m",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-3203.png?width=120",
+		"text": "Type 2 - Type 2, 32A",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-3203"
+	},
+	"EV-1107": {
+		"length": "7m",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-1107.png?width=120",
+		"text": "Type 2 - Type 1, 16A",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-1107"
+	},
+	"EV-1217": {
+		"length": "7m",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-1217.png?width=120",
+		"text": "Type 2 - Type 2, 32A",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-1217"
+	},
+	"EV-3205": {
+		"length": "5m",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-3205.png?width=120",
+		"text": "Type 2 - Type 2, 32A",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-3205"
+	},
+	"EV-3207": {
+		"length": "7m",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-3207.png?width=120",
+		"text": "Type 2 - Type 2, 32A",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-3207"
+	},
+	"EV-1225": {
+		"length": "5m",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-1225.png?width=120",
+		"text": "Mode 2, Schuko - Type 2, 10-16A",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-1225"
+	},
+	"EV-32010": {
+		"length": "10m",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-32010.png?width=120",
+		"text": "Type 2 - type 2, 32A",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-32010"
+	},
+	"EV-32110": {
+		"length": "10m",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-32110.png?width=120",
+		"text": "Type 2 - Type 2, 16A",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-32110"
+	},
+	"EV-3217": {
+		"length": "7m",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-3217.png?width=120",
+		"text": "Type 2 - Type 2, 16A",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-3217"
+	},
+	"EV-3215": {
+		"length": "5m",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-3215.png?width=120",
+		"text": "Type 2 - Type 2, 16A",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-3215"
+	},
+	"EV-3213": {
+		"length": "3m",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-3213.png?width=120",
+		"text": "Type 2 - Type 2, 16A",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-3213"
+	},
+	"EV-12110": {
+		"length": "10m",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-12110.png?width=120",
+		"text": "Type 2 - Type 2, 32A",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-12110"
+	},
+	"EV-12010": {
+		"length": "10m",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-12010.png?width=120",
+		"text": "Type 2 - Type 2, 16A",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-12010"
+	},
+	"EV-11010": {
+		"length": "10m",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-11010.png?width=120",
+		"text": "Type 2 - Type 1, 16A",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-11010"
+	}
+}
