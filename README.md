@@ -12,13 +12,13 @@ The E-Charge Configurator can be embedded or opened as a top-level window withou
 ```html
 <iframe src="https://echarge-configurator.github.deltaco.eu/"></iframe>
 ```
-This will initialize the configurator will all default settings. Including the DELTACO A Nordic Brand logo, product links to deltaco.se and the default theme colors.
+This will initialize the configurator with all default settings. Including the *DELTACO A Nordic Brand* logo, product links to deltaco.se and the default theme colors.
 
 ### Filtered configurator
 
 You can also provide your own list of cables. This is useful if you wish to link to your own webshop from the configurator, remove products not in your assortment; or even change cable metadata (such as title and thumbnail).
 
-Each cable is defined as an object, and the list of all available cables are fetched by the configurator as a JSON file (see [`cables.json`](https://github.com/Deltaco-AB/echarge-configurator/blob/master/cables.json))
+Each cable is defined as an object, the list of all available cables are fetched by the configurator as a JSON file (see [`cables.json`](https://github.com/Deltaco-AB/echarge-configurator/blob/master/cables.json))
 
 ```json
 "EV-3207": {
@@ -52,14 +52,14 @@ You can change the appearance of the configurator by passing search parameters.
 
 ### `logo`
 
-You can insert your own image to replace the *DELTACO A Nordic Brand* logo in the header. Supply a search parameter with a URL to an image.
+You can insert your own image to replace the default *DELTACO A Nordic Brand* logo in the header. Supply a search parameter with a URL to an image.
 ```html
 <iframe src="https://echarge-configurator.github.deltaco.eu?logo=https://example.com/img/myLogo.webp"></iframe>
 ```
 
 ### `color`
 
-Change the palette of the configurator by passing up to three `color` parameters. They will alter in order of appearace from left to right:
+Change the default palette of the configurator by passing up to three `color` parameters. They will alter in order of appearace from left to right:
 
 1. Main color (default is green)
 2. Hover color (default is green with a lighter shade)
