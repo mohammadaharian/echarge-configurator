@@ -23,6 +23,11 @@ export class Configurator {
         return response.json(); // parses JSON response into native JavaScript objects
     }
 
+    // Get subset of cables from condition
+    filterCables(predicate) {
+        return Object.fromEntries(Object.entries(this.data.cables).filter(predicate))
+    }
+
     // Set dropdown visibility
     dropdownVisible(show) {
         if(!show) {
@@ -121,13 +126,24 @@ export class Configurator {
         }
     }
 
+    addItem(item) {
+        return `<div class="item ${item.argument}"><p class="length">${item.length}</p><img src="${item.image}"/><p class="info">${item.text}</p><a href="${item.link}" target="_blank">Välj</a></div>`;
+    }
+
+    addAccessories() {
+        const accessories = this.filterCables(([pid, prop]) => prop.argument === "noLength");
+
+        console.log(accessories);
+        for(const accessory of Object.values(accessories)) {
+            this.UI.accessories.children[0].insertAdjacentHTML("beforeend", this.addItem(accessory));
+        }
+
+        this.UI.accessories.classList.add("active");
+    }
+
     openSummary() {
         this.UI.wrapper.style.display = "none";
         const data = this.data.vehicles[this.configuration[0]][this.configuration[1]][this.configuration[2]];
-
-        function addItem(cable) {
-            return `<div class="item ${cable.argument}"><p class="length">${cable.length}</p><img src="${cable.image}"/><p class="info">${cable.text}</p><a href="${cable.link}" target="_blank">Välj</a></div>`;
-        }
 
         // Set vehicle info fields
         let bannerText = this.UI.summary.querySelector("#banner").children;
@@ -143,17 +159,13 @@ export class Configurator {
             }
             const data = this.data.cables[cable];
             if(cable in this.data.cables) {
-                this.UI.cables.innerHTML += addItem(data);
+                this.UI.cables.innerHTML += this.addItem(data);
                 i++;
             }
         });
         
         // Accessory items
-        this.UI.cables.innerHTML += addItem(this.data.cables["EV-5100"]);
-        if(i > 3) {
-            this.UI.accessories.classList.add("active");
-            this.UI.accessories.children[0].innerHTML = addItem(this.data.cables["EV-5100"]);
-        }
+        this.addAccessories();
 
         this.UI.summary.classList.add("active");
     }
