@@ -6,6 +6,34 @@
 		"text": "Förvaringsväska för kablar",
 		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-5100"
 	},
+	"EV-5101": {
+		"argument": "noLength",
+		"length": "0",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-5102.png?width=120",
+		"text": "Deltaco väggfäste för Typ2 laddningskontakt",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-5101"
+	},
+	"EV-5102": {
+		"argument": "noLength",
+		"length": "0",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-5102.png?width=120",
+		"text": "Deltaco väggfäste för Typ1 laddningskontakt",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-5102"
+	},
+	"EV-5103": {
+		"argument": "noLength",
+		"length": "0",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-5103.png?width=120",
+		"text": "Deltaco väggfäste för Typ2 laddningskontakt",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-5103"
+	},
+	"EV-5105": {
+		"argument": "noLength",
+		"length": "0",
+		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-5105.png?width=120",
+		"text": "Deltaco väggfäste för Typ2 laddningskontakt",
+		"link": "https://www.deltaco.se/produkter/kablar-adaptrar/ev-charge/EV-5105"
+	},
 	"EV-1203": {
 		"length": "3m",
 		"image": "https://www.deltaco.se/sites/cdn/PublishingImages/Products/EV-1203.png?width=120",
