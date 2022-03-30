@@ -133,7 +133,6 @@ export class Configurator {
     addAccessories() {
         const accessories = this.filterCables(([pid, prop]) => prop.argument === "noLength");
 
-        console.log(accessories);
         for(const accessory of Object.values(accessories)) {
             this.UI.accessories.children[0].insertAdjacentHTML("beforeend", this.addItem(accessory));
         }
