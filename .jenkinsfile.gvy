@@ -16,35 +16,35 @@ pipeline {
 
     stages {
 
-        /*** [start] integration ***/
+        /*** [start] master ***/
         stage('Deploy Integration') {
             when {
-                branch 'integration'
+                branch 'master'
             }
             steps {
                 sh '''
-                echo "Starting push at Staging"
+                echo "Starting push at Master"
                 git push -f ${LIVE_GIT} HEAD:refs/heads/master
                 '''
             }
         }
         stage('Build Integration') {
             when {
-                branch 'integration'
+                branch 'master'
             }
             steps {
                 sh '''
-				echo "Starting build at Integration"
+				echo "Starting build at Master"
                 '''
             }
         }
         stage('Test Integration') {
             when {
-                branch 'integration'
+                branch 'master'
             }
             steps {
                 sh '''
-                echo "Starting test at Integration"
+                echo "Starting test at Master"
                 '''
             }
         }
