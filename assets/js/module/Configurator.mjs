@@ -231,8 +231,6 @@ export class Configurator {
         const language = lang || this.language;
         const container = DOMContainer || typeof document === 'object' ? document : null;
 
-        console.log(container);
-
         if (container) {
             const elements = container.querySelectorAll('[translator]');
             elements.forEach((element) => this.translateElement(element, language));
@@ -257,15 +255,9 @@ export class Configurator {
         const language = options.lang || this.language;
         let output = this.dictionary.hasOwnProperty(this.language);
 
-        console.log(this.dictionary);
-        console.log(language);
-        console.log(output);
-
         if (output) {
             output = this.dictionary[language][input];
         }
-
-        console.log(output);
 
         return output ? output : input;
     }
