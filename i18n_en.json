@@ -1,5 +1,19 @@
 {
     "en": {
-        "hello world": "hello world"
+        "Find the right cable with our configurator": "Find the right cable with our configurator",
+        "Select car brand": "Select car brand",
+        "Select model": "Select model",
+        "Select year model": "Select year model",
+        "Search": "Search",
+        "Your": "Your",
+        "is": "is",
+        "and the built-in charger for the car is":"and the built-in charger for the car is",
+        "with": "with",
+        "We recommend": "We recommend",
+        "New search":"New search",
+        "Choose accessories":"Choose accessories",
+        "Made by": "Made by",
+        "Powered by":"Powered by",
+        "Select":"Select"
     }
 }

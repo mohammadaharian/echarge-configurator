@@ -17,8 +17,8 @@ export class Configurator {
             cables: {}
         },
 
-        this.translation = "i18n_en.json",
-        this.language = "en",
+        this.translation = "i18n_sv.json",
+        this.language = "sv",
         this.dictionary = {}
     }
 
