@@ -279,7 +279,7 @@ a {
     border-radius: 50px;
 }
 
-#echargeMain #summary #banner span {
+#echargeMain #summary #banner span.highlight {
     color: var(--color-accent);
 }
 
