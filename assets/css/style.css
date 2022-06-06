@@ -69,6 +69,12 @@ a {
     margin-bottom: auto;
     color: white;
     font-size: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hide;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #echargeHeader #echargeLogo {
@@ -115,7 +121,7 @@ a {
 #echargeMain #configurator #cursor {
     position: absolute;
     margin: 10px;
-    width: 200px;
+    min-width: 200px;
     height: 65px;
     background: white;
     box-shadow: var(--box-shadow);
@@ -153,7 +159,7 @@ a {
 
 /* Select options */
 #echargeMain #configurator #select .option {
-    width: 210px;
+    min-width: 210px;
     font-size: 20px;
     border-left: solid 1px #C7C7C7;
     cursor: pointer;
@@ -283,9 +289,13 @@ a {
     color: var(--color-accent);
 }
 
-#echargeMain #summary #banner span:nth-of-type(2) {
+#echargeMain #summary #banner span:nth-of-type(4) {
     color: inherit;
     font-weight: bold;
+}
+
+#echargeMain #summary #banner span {
+    word-break: break-all;
 }
 
 #echargeMain #summary h2 {
@@ -545,7 +555,7 @@ a {
 #echargeFooter {
     position: absolute;
     width: 100%;
-    height: 40px;
+    min-height: 40px;
     box-sizing: border-box;
     padding-left: 10px;
     background: var(--color-secondary);
@@ -556,6 +566,11 @@ a {
 #echargeFooter img {
     height: 60%;
     height: 25px;
+}
+
+#echargeFooter a {
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 /* Media Queries */
