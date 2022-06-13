@@ -1,0 +1,44 @@
+<head>
+    <title>1902 TESTING PAGE</title>
+
+    <style>
+        #iframe_elememt {
+            width: 90%;
+            height: 500px;
+            margin-top: 20px;
+            display: block;
+        }
+
+        #iframe_url {
+            height: 44px;
+            width: 20%;
+        }
+
+        #button {
+            height: 44px;
+            width: 200px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <p>Set iframe url here:</p>
+    <input type="text" id="iframe_url">
+    <button type="button" id="button" onclick="loadIframe()">Load Iframe</button>
+
+
+    <p>Iframe:</p>
+    <iframe id="iframe_elememt"></iframe>
+
+    <script type="text/javascript">
+
+        function loadIframe()
+        {
+            var src = document.getElementById('iframe_url').value;
+            document.getElementById('iframe_elememt').src = src;
+        }
+        
+    </script>
+
+</body>
