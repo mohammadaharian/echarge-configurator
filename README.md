@@ -46,6 +46,12 @@ Simply pass the URL of your `cables.json` as a search parameter. `?cables=<PATH_
 
 You can translate the configurator by providing a JSON file (see [`i18n_sv.json`](https://github.com/Deltaco-AB/echarge-configurator/blob/master/i18n_sv.json))
 
+```json
+"<language>": {
+  "<original_text>": "<translated_text>"
+}
+```
+
 Simply pass it on the url `?translation=<PATH_TO_JSON>`
 ```html
 <iframe src="https://echarge-configurator.github.deltaco.eu?translation=https://example.com/i18n_sv.json"></iframe>
