@@ -11,11 +11,15 @@ export class Configurator {
             cables: document.querySelector("#cables"),
             accessories: document.querySelector("#accessories")
         },
-        this.dict = ["Välj bilmärke","Välj modell","Välj årsmodell"],
+        this.dict = ["Select car brand","Select model","Select year model"],
         this.data = {
             vehicles: {},
             cables: {}
-        }
+        },
+
+        this.translation = "i18n_sv.json",
+        this.language = "sv",
+        this.dictionary = {}
     }
 
     async import(url) {
@@ -83,8 +87,8 @@ export class Configurator {
               cursor = this.UI.cursor.children[0].children[section],
               value = this.dict[section];
 
-        select.innerText = value;
-        cursor.innerText = value;
+        select.innerText = this.processTranslate(value);
+        cursor.innerText = this.processTranslate(value);
     }
 
     // Set the active section
@@ -127,7 +131,12 @@ export class Configurator {
     }
 
     addItem(item) {
-        return `<div class="item ${item.argument}"><p class="length">${item.length}</p><img src="${item.image}"/><p class="info">${item.text}</p><a href="${item.link}" target="_blank">Välj</a></div>`;
+        return `<div class="item ${item.argument}">
+                    <p class="length">${item.length}</p>
+                        <img src="${item.image}"/>
+                    <p class="info">${item.text}</p>
+                    <a href="${item.link}" target="_blank">${this.processTranslate('Select')}</a>
+                </div>`;
     }
 
     addAccessories() {
@@ -146,10 +155,10 @@ export class Configurator {
 
         // Set vehicle info fields
         let bannerText = this.UI.summary.querySelector("#banner").children;
-        bannerText[0].innerText = this.configuration[0];
-        bannerText[1].innerText = data.charger.type;
-        bannerText[2].innerText = data.charger.speed;
-        bannerText[3].innerText = data.charger.phase;
+        bannerText[1].innerText = this.configuration[0];
+        bannerText[3].innerText = data.charger.type;
+        bannerText[5].innerText = data.charger.speed;
+        bannerText[7].innerText = data.charger.phase;
 
         let i = 0;
         data.cables.forEach(cable => {
@@ -201,5 +210,55 @@ export class Configurator {
         this.UI.accessories.addEventListener("click",() => this.UI.summary.classList.toggle("accessoriesActive"));
 
         this.setDropdownData(0);
+
+        /**
+         * process translation file
+         * then proceed with translation
+         */
+        const searchParams = new URLSearchParams(window.location.search);
+        const param = searchParams.get('translation');
+        const json = param ? param : this.translation;
+
+        this.import(json).then(data => {
+            this.dictionary = data;
+            this.language = Object.keys(this.dictionary)[0];
+            this.translate();
+        });
+
+    }
+
+    translate(DOMContainer, lang){
+        const language = lang || this.language;
+        const container = DOMContainer || typeof document === 'object' ? document : null;
+
+        if (container) {
+            const elements = container.querySelectorAll('[translator]');
+            elements.forEach((element) => this.translateElement(element, language));
+        }
+    }
+
+    translateElement(DOMElement, lang) {
+        if (DOMElement) {
+            const language = lang || this.language;
+            const input = DOMElement.textContent || DOMElement.innerText;
+            const html = DOMElement.attributes['translate-html'] ? true : false;
+
+            DOMElement[
+                    html
+						? 'innerHTML'
+						: 'textContent'
+            ] = this.processTranslate(input, {lang: language});
+        }
+    }
+
+    processTranslate(input = '', options = {}) {
+        const language = options.lang || this.language;
+        let output = this.dictionary.hasOwnProperty(this.language);
+
+        if (output) {
+            output = this.dictionary[language][input];
+        }
+
+        return output ? output : input;
     }
 }
